@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FaastU Icons</title>
+<style>
+  :root{--ink:#15202b;--soft:#4a5a6b;--line:#dde4ec;--bg:#f4f5f7;--accent:#2f6f4e}
+  *{box-sizing:border-box}
+  body{margin:0;padding:34px 20px 70px;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif;font-size:17px;line-height:1.7}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:28px;margin:0 0 8px}
+  p.sub{margin:0 0 26px;color:var(--soft)}
+  h2{font-size:19px;margin:30px 0 10px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  a.big{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+        padding:12px 22px;border-radius:10px;font-weight:700}
+  code{background:#eef2f6;padding:2px 6px;border-radius:5px;font-size:15px}
+  pre{background:#15202b;color:#f0f4f8;border-radius:10px;padding:16px 18px;overflow:auto;
+      font-size:14.5px;line-height:1.6;direction:ltr;text-align:left}
+  ul{padding-inline-start:22px}
+  li{margin-bottom:6px}
+  .note{background:#fff7e4;border:1px solid #e8d39a;border-radius:10px;padding:14px 16px;color:#6b4e10}
+  footer{margin-top:34px;color:var(--soft);font-size:14.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>🔖 FaastU Icons</h1>
+  <p class="sub">שפת אייקונים אחת, שמשרתת כמה פרויקטים. ציור אחד = מזהה אחד, קבוע לנצח.</p>
+
+  <p><a class="big" href="build/sheet.html">דף הקונטקט — לראות את כל האייקונים ←</a></p>
+
+  <h2>שתי הכתובות שצרכן צריך</h2>
+  <div class="card">
+    <ul>
+      <li><code>build/icons.json</code> — המניפסט: מי כל אייקון, מה הוא אומר, ולאילו תגיות הוא קשור.</li>
+      <li><code>build/sprite.svg</code> — כל הציורים בקובץ אחד.</li>
+    </ul>
+  </div>
+
+  <h2>איך משבצים באתר</h2>
+  <div class="note">
+    ⚠️ <b>אי אפשר להצביע על ה-sprite מדומיין אחר.</b> הדפדפן חוסם <code>&lt;use&gt;</code> בין מקורות.
+    צריך למשוך את הקובץ ולהזריק אותו לדף — פעם אחת, בראש ה-<code>&lt;body&gt;</code>.
+  </div>
+  <pre>const BASE = "https://shefyg.github.io/faastu-icons/build/";
+
+fetch(BASE + "sprite.svg")
+  .then(r =&gt; r.text())
+  .then(t =&gt; document.body.insertAdjacentHTML("afterbegin", t));
+
+// ואז, לכל אייקון:
+// &lt;svg class="icon" aria-label="Video" role="img"&gt;&lt;use href="#icon-video"&gt;&lt;/use&gt;&lt;/svg&gt;
+//
+// הצבע נשלט ב-CSS:  .icon { width:20px; height:20px; color:#5a6472; }</pre>
+
+  <h2>מזהה שלא קיים</h2>
+  <div class="card">
+    <p style="margin:0">הספרייה מחזירה <code>#icon-missing</code> — ריבוע קו ריק. העמוד לא נשבר ולא נפער בו חור.</p>
+  </div>
+
+  <h2>להוסיף אייקון</h2>
+  <div class="card">
+    <ol style="margin:0;padding-inline-start:22px">
+      <li>קובץ SVG ל-<code>icons/</code> — קו בלבד, <code>currentColor</code>, בלי <code>&lt;title&gt;</code> ובלי <code>id</code>.</li>
+      <li>שורה מלאה ל-<code>icons.json</code>.</li>
+      <li><code>node tools/build.js</code> — הוא עוצר אם משהו חסר.</li>
+      <li>השער: שפי מאשר בעין · שורת מניפסט מלאה · נוגה בודקת ניגודיות ו-375px.</li>
+    </ol>
+  </div>
+
+  <footer>אפיון: <code>recommendations-site/specs/04-icon-library.md</code> · אקי 🔖 ונוגה ✨</footer>
+</div>
+</body>
+</html>

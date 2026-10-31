@@ -1,0 +1,79 @@
+{
+  "$comment": "מקור האמת של ספריית האייקונים. עורכים ביד; build/ נוצר מכאן. אפיון: recommendations-site/specs/04-icon-library.md",
+  "schema": 1,
+  "style": {
+    "viewBox": "0 0 24 24",
+    "stroke": "currentColor",
+    "strokeWidth": 1.6,
+    "fill": "none",
+    "note": "קו בלבד, בלי מילוי ובלי רקע. הצבע נשלט בצד הצרכן. ברירת המחדל באתר ההמלצות: #5a6472"
+  },
+  "icons": [
+    {
+      "id": "video",
+      "name": "Video",
+      "meaning": "A play button — moving pictures you watch",
+      "family": "type",
+      "aria": "Video",
+      "tag_ids": ["video"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/video.svg"
+    },
+    {
+      "id": "podcast",
+      "name": "Podcast",
+      "meaning": "A microphone on a stand — something you listen to",
+      "family": "type",
+      "aria": "Podcast",
+      "tag_ids": ["podcast"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/podcast.svg"
+    },
+    {
+      "id": "article",
+      "name": "Article",
+      "meaning": "A page of text — something you read",
+      "family": "type",
+      "aria": "Article",
+      "tag_ids": ["article"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/article.svg"
+    },
+    {
+      "id": "book",
+      "name": "Book",
+      "meaning": "An open book — a long read",
+      "family": "type",
+      "aria": "Book",
+      "tag_ids": ["book"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/book.svg"
+    },
+    {
+      "id": "screen",
+      "name": "Film or series",
+      "meaning": "A clapperboard over a screen — a film or a series",
+      "family": "type",
+      "aria": "Film or series",
+      "tag_ids": ["screen"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/screen.svg"
+    },
+    {
+      "id": "game",
+      "name": "Game",
+      "meaning": "A gamepad — something you play",
+      "family": "type",
+      "aria": "Game",
+      "tag_ids": ["game"],
+      "version": 1,
+      "status": "active",
+      "file": "icons/game.svg"
+    }
+  ]
+}

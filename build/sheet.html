@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FaastU — דף קונטקט אייקונים</title>
+<style>
+  :root{--ink:#15202b;--line:#dde4ec;--icon:#5a6472;--bg:#f4f5f7}
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 20px 60px;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif;font-size:17px;line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px}
+  p.sub{margin:0 0 22px;color:#4a5a6b}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .bar button{font:inherit;font-size:15px;padding:8px 14px;border:1px solid var(--line);
+              border-radius:9px;background:#fff;cursor:pointer}
+  .bar button[aria-pressed="true"]{background:#15202b;color:#fff;border-color:#15202b}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+  .cell{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;
+        padding:18px 14px;display:flex;gap:14px;align-items:center}
+  .icon{width:34px;height:34px;flex:0 0 auto;color:var(--icon)}
+  figcaption{display:flex;flex-direction:column;font-size:14px;min-width:0}
+  figcaption b{font-size:16px}
+  figcaption code{color:#4a5a6b;font-size:12.5px}
+  figcaption span{color:#4a5a6b;font-size:13px;margin-top:3px}
+  body.grey{filter:grayscale(1)}
+  body.big .icon{width:64px;height:64px}
+  body.small .icon{width:18px;height:18px}
+  footer{margin-top:30px;color:#4a5a6b;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🔖 דף קונטקט — 6 אייקונים</h1>
+  <p class="sub">בדיקת העין: אייקון שצריך לקרוא את הטקסט שלו כדי להבין — לא עבר.</p>
+
+  <div class="bar">
+    <button type="button" id="b-grey" aria-pressed="false">גווני אפור</button>
+    <button type="button" id="b-big" aria-pressed="false">גדול</button>
+    <button type="button" id="b-small" aria-pressed="false">קטן (18px)</button>
+  </div>
+
+  <div class="grid">
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-video"></use></svg>
+      <figcaption><b>Video</b><code>video</code><span>A play button — moving pictures you watch</span></figcaption>
+    </figure>
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-podcast"></use></svg>
+      <figcaption><b>Podcast</b><code>podcast</code><span>A microphone on a stand — something you listen to</span></figcaption>
+    </figure>
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-article"></use></svg>
+      <figcaption><b>Article</b><code>article</code><span>A page of text — something you read</span></figcaption>
+    </figure>
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg>
+      <figcaption><b>Book</b><code>book</code><span>An open book — a long read</span></figcaption>
+    </figure>
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-screen"></use></svg>
+      <figcaption><b>Film or series</b><code>screen</code><span>A clapperboard over a screen — a film or a series</span></figcaption>
+    </figure>
+    <figure class="cell">
+      <svg class="icon" aria-hidden="true"><use href="#icon-game"></use></svg>
+      <figcaption><b>Game</b><code>game</code><span>A gamepad — something you play</span></figcaption>
+    </figure>
+  </div>
+
+  <footer>נוצר על ידי <code>tools/build.js</code> · אפיון 04 · 2026-10-31</footer>
+</div>
+
+<script>
+  fetch('sprite.svg').then(r => r.text()).then(t => {
+    document.body.insertAdjacentHTML('afterbegin', t);
+  });
+  for (const [id, cls] of [['b-grey','grey'],['b-big','big'],['b-small','small']]) {
+    document.getElementById(id).addEventListener('click', (e) => {
+      const on = document.body.classList.toggle(cls);
+      e.currentTarget.setAttribute('aria-pressed', String(on));
+    });
+  }
+</script>
+</body>
+</html>

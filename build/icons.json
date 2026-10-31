@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "generated": "2026-10-31",
+  "sprite": "sprite.svg",
+  "style": {
+    "viewBox": "0 0 24 24",
+    "stroke": "currentColor",
+    "strokeWidth": 1.6,
+    "fill": "none",
+    "note": "קו בלבד, בלי מילוי ובלי רקע. הצבע נשלט בצד הצרכן. ברירת המחדל באתר ההמלצות: #5a6472"
+  },
+  "icons": [
+    {
+      "id": "video",
+      "name": "Video",
+      "meaning": "A play button — moving pictures you watch",
+      "family": "type",
+      "aria": "Video",
+      "tag_ids": [
+        "video"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/video.svg",
+      "symbol": "icon-video"
+    },
+    {
+      "id": "podcast",
+      "name": "Podcast",
+      "meaning": "A microphone on a stand — something you listen to",
+      "family": "type",
+      "aria": "Podcast",
+      "tag_ids": [
+        "podcast"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/podcast.svg",
+      "symbol": "icon-podcast"
+    },
+    {
+      "id": "article",
+      "name": "Article",
+      "meaning": "A page of text — something you read",
+      "family": "type",
+      "aria": "Article",
+      "tag_ids": [
+        "article"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/article.svg",
+      "symbol": "icon-article"
+    },
+    {
+      "id": "book",
+      "name": "Book",
+      "meaning": "An open book — a long read",
+      "family": "type",
+      "aria": "Book",
+      "tag_ids": [
+        "book"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/book.svg",
+      "symbol": "icon-book"
+    },
+    {
+      "id": "screen",
+      "name": "Film or series",
+      "meaning": "A clapperboard over a screen — a film or a series",
+      "family": "type",
+      "aria": "Film or series",
+      "tag_ids": [
+        "screen"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/screen.svg",
+      "symbol": "icon-screen"
+    },
+    {
+      "id": "game",
+      "name": "Game",
+      "meaning": "A gamepad — something you play",
+      "family": "type",
+      "aria": "Game",
+      "tag_ids": [
+        "game"
+      ],
+      "version": 1,
+      "status": "active",
+      "file": "icons/game.svg",
+      "symbol": "icon-game"
+    }
+  ]
+}
